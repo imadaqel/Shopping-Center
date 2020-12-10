@@ -26,7 +26,7 @@ def home(request):
 
 class UserProfileView(APIView):
     def get(self, request, *args, **kwargs):
-        return Response({"user": detail.user,"stripe_customer_id": detail.stripe_customer_id}, status=HTTP_200_OK)
+        return Response({"user","stripe_customer_id"})
         
 
 
