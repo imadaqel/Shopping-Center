@@ -25,7 +25,7 @@ class Item(models.Model):
     itemName=models.CharField(max_length=70,null=True)
     details=models.CharField(max_length=200,null=True)
     price=models.FloatField(null=True)
-    image=models.CharField(max_length=200,null=True)
+    image=models.ImageField()
     quantity=models.CharField(max_length=200,null=True)
     category = models.CharField(choices=CATEGORY, max_length=20)
     entry_date=models.DateTimeField(auto_now_add=True,null=True)

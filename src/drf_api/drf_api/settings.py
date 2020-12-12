@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +42,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'core',
-    ]
+
+
+
+]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -128,6 +133,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ORIGIN_WHITELIST = (
-       'http://localhost:3000',
-)
+# CORS_ORIGIN_WHITELIST = (
+#        'http://localhost:3000',
+# )
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR , "static"),
+    
+]
+
+ 
+MEDIA_URL = '/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+# STATIC_ROOT = os.path.join(BASE_DIR,'assets')
